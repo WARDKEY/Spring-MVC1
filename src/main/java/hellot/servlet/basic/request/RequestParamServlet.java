@@ -11,7 +11,9 @@ import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * 1. 파라미터 전송 기능
- * http.//localhost:8080/request-param?username=hello&age=20
+ * http://localhost:8080/request-param?username=hello&age=20
+ * 2. 동일한 파라미터 전송 가능
+ * http://localhost:8080/request-param?username=hello&username=kim&age=20
  */
 @WebServlet(name = "requestParamServlet", urlPatterns = "/request-param")
 public class RequestParamServlet extends HttpServlet {
@@ -20,8 +22,18 @@ public class RequestParamServlet extends HttpServlet {
 		System.out.println("[전체 파라미터 조회] - start");
 		System.out.println("키 값인 paramName = "+ request.getHeaderNames());	// key값(paramName = org.apache.tomcat.util.http.NamesEnumerator@201ded99)
 		System.out.println();
+
+		/*
+        Enumeration<String> parameterNames = request.getParameterNames();
+        while (parameterNames.hasMoreElements()) {
+            String paramName = parameterNames.nextElement();
+            System.out.println(paramName + "=" +
+request.getParameter(paramName));
+} */
+
 		request.getParameterNames().asIterator().forEachRemaining(paramName -> System.out.println(
 			paramName + "= " + request.getParameter(paramName)));	// paramName은 key여서 .getParameter(key)를 통해 value값 뽑아냄
+
 		System.out.println("[전체 파라미터 조회] - end");
 		System.out.println();
 
