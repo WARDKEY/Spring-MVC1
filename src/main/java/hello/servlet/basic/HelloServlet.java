@@ -1,4 +1,4 @@
-package hellot.servlet.basic;
+package hello.servlet.basic;
 
 import java.io.IOException;
 
