@@ -1,4 +1,4 @@
-package hello.servlet.basic;
+package hellot.servlet.basic;
 
 import java.io.IOException;
 
@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "helloServlet", urlPatterns = "/hello")	// /hello로 접속할 경우 실행
+@WebServlet(name = "helloServlet", urlPatterns = "/hellot")	// /hello로 접속할 경우 실행
 public class HelloServlet extends HttpServlet {
 
 	// 서블릿 호출되면 service 메서드 실행
@@ -27,7 +27,7 @@ public class HelloServlet extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 
 		// write를 하면 Http Body에 데이터가 들어감
-		response.getWriter().write("hello " + username);
+		response.getWriter().write("hellot " + username);
 
 	}
 }

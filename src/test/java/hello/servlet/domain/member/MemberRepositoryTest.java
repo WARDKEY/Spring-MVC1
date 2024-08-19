@@ -8,6 +8,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import hellot.servlet.domain.member.Member;
+import hellot.servlet.domain.member.MemberRepository;
+
 class MemberRepositoryTest {
 	MemberRepository memberRepository = MemberRepository.getInstance();
 

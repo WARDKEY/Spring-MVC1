@@ -1,9 +1,9 @@
-package hello.servlet.web.servlet;
+package hellot.servlet.web.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import hello.servlet.domain.member.MemberRepository;
+import hellot.servlet.domain.member.MemberRepository;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

@@ -1,4 +1,4 @@
-package hello.servlet.basic.request;
+package hellot.servlet.basic.request;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -7,7 +7,7 @@ import org.springframework.util.StreamUtils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import hello.servlet.basic.HelloData;
+import hellot.servlet.basic.HelloData;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletInputStream;
 import jakarta.servlet.annotation.WebServlet;

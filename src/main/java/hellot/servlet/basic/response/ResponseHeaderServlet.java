@@ -1,4 +1,4 @@
-package hello.servlet.basic.response;
+package hellot.servlet.basic.response;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -22,7 +22,7 @@ public class ResponseHeaderServlet extends HttpServlet {
 		response.setHeader("Content-Type", "text/plain;charset=utf-8");
 		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 		response.setHeader("Pragma", "no-cache");
-		response.setHeader("my-header", "hello");
+		response.setHeader("my-header", "hellot");
 
 		//[Header 편의 메서드]
 		// content(response);

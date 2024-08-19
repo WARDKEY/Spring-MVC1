@@ -1,4 +1,4 @@
-package hello.servlet.basic.request;
+package hellot.servlet.basic.request;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
