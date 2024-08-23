@@ -14,7 +14,11 @@ import hellot.servlet.web.frontcontroller.v3.ControllerV3;
 import hellot.servlet.web.frontcontroller.v3.controller.MemberFormControllerV3;
 import hellot.servlet.web.frontcontroller.v3.controller.MemberListControllerV3;
 import hellot.servlet.web.frontcontroller.v3.controller.MemberSaveControllerV3;
+import hellot.servlet.web.frontcontroller.v4.controller.MemberFormControllerV4;
+import hellot.servlet.web.frontcontroller.v4.controller.MemberListControllerV4;
+import hellot.servlet.web.frontcontroller.v4.controller.MemberSaveControllerV4;
 import hellot.servlet.web.frontcontroller.v5.adapter.ControllerV3HandlerAdapter;
+import hellot.servlet.web.frontcontroller.v5.adapter.ControllerV4HandlerAdapter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -30,20 +34,24 @@ public class FrontControllerServlerV5 extends HttpServlet {
 	private final List<MyHandlerAdapter> handelerAdapters = new ArrayList<>();
 
 	public FrontControllerServlerV5() {
-		initHandlerMappingMap();
-
-		initHandlerAdapters();
-
+		initHandlerMappingMap();	// 핸들러 매핑 초기화
+		initHandlerAdapters();	// 어댑터 초기화
 	}
 
 	private void initHandlerMappingMap() {
 		handlerMappingMap.put("/front-controller/v5/v3/members/new-form", new MemberFormControllerV3());
 		handlerMappingMap.put("/front-controller/v5/v3/members/save", new MemberSaveControllerV3());
 		handlerMappingMap.put("/front-controller/v5/v3/members", new MemberListControllerV3());
+
+		// V4 추가
+		handlerMappingMap.put("/front-controller/v5/v4/members/new-form", new MemberFormControllerV4());
+		handlerMappingMap.put("/front-controller/v5/v4/members/save", new MemberSaveControllerV4());
+		handlerMappingMap.put("/front-controller/v5/v4/members", new MemberListControllerV4());
 	}
 
 	private void initHandlerAdapters() {
 		handelerAdapters.add(new ControllerV3HandlerAdapter());
+		handelerAdapters.add(new ControllerV4HandlerAdapter());
 	}
 
 	@Override
@@ -52,7 +60,6 @@ public class FrontControllerServlerV5 extends HttpServlet {
 
 		// MemberFormControllerV3 찾음
 		Object handler = getHandler(request);
-
 
 		// 만약 해당 키에 대한 값이 없으면(url이 유효하지 않으면) 404 Not Found
 		if (handler == null){
