@@ -14,6 +14,7 @@ public class OldController  implements Controller {
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		System.out.println("OldController.handleRequest");
 
-		return null;
+		// 컨트롤러는 정상적으로 호출됐는데 뷰가 존재하지 않아서 페이지가 뜨지 않음(application.properties에 설정 넣어서 뜸)
+		return new ModelAndView("new-form");
 	}
 }
