@@ -11,6 +11,10 @@ import hello.servlet.domain.member.MemberRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+/**
+ * 클래스 단위 -> 메서드 단위
+ * @RequestMapping 클래스 레벨과 메서드 레벨 조합
+ */
 @Controller
 @RequestMapping("springmvc/v2/members")
 public class SpringMemberControllerV2 {
